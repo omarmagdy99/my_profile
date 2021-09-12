@@ -1,0 +1,185 @@
+
+body{
+    font-family: "Roboto",sans-serif;
+    padding: 0px;
+}
+.row{
+    margin: 0px;
+
+}
+/* start navbar */
+nav{
+    text-transform: uppercase;
+    background-color: #ffffff00;
+    color: white;
+}
+#sec1{
+    width: auto;
+    height: 100vh;
+    background-image: url(../pic/blue-sky-clear-sky-cold-fog-346529.jpg);
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+
+}
+.navbar-light .navbar-nav .active > .nav-link:hover{
+    color: #109af7;
+}
+.navbar-light .navbar-brand:hover{
+    color: white;
+}
+.navbar-light .navbar-brand{
+    border: solid 4px #109af7;
+    padding: 0.5% 1%;
+}
+.navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-brand{
+    color: white;
+    font-size: medium;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 2% 3%;
+
+}
+nav a{
+    margin: 0%;
+}
+/* end navbar */
+
+/* start main */
+/* start section1 */
+.cover{
+    background-color: #0000009e;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+
+}
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #b6192300;
+    z-index: 2;
+}
+
+
+#sec1-hi{
+    color: white;
+    font-size: 220%;
+    position: absolute;
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    padding-top: 15%;
+}
+#sec1-hi span{
+    font-size: 5vw;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#sec1-hi span h1{
+    display: inline;
+    font-size: 110% ;
+    text-transform: uppercase;
+
+}
+#sec1-hi a{
+    color: white;
+    border: solid 2px white;
+    padding: 13px;
+    font-size: large;
+}
+
+#sec1-hi a:hover{
+    text-decoration: none;
+    border-color: #109af7;
+    background: rgba(0,0,0,0) linear-gradient(to right,#00c6ff,#0072ff);
+}
+
+
+/* end section1 */
+/* strt section 2 */
+#sec2{
+    margin: 10% 0%;
+}
+#sec2 h3{
+    display: inline-block;
+    border-top: solid 4px  black;
+    border-bottom: solid 4px  #109af7;
+    padding: 15px 0px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    font-size: xx-large;
+}
+#sec2 p{
+    color: rgb(107, 107, 107);
+    margin-bottom: 100px;
+
+}
+#sec2 img{
+    width: 59%;
+    margin-left: 15%;
+    border: solid 15px rgba(128, 128, 128, 0.164);
+    
+
+}
+
+#sec2 h4{
+    display: inline-block;
+    padding: 15px 0px 2px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    color: #109af7;
+    font-size: xx-large;
+}
+
+
+/* end section 2 */
+
+
+
+/* start section 3 */
+
+#sec3{
+    padding-top: 6%;
+    background-color: rgb(245, 245, 245);
+}
+
+#sec3 h3{
+    display: inline-block;
+    border-top: solid 4px  black;
+    border-bottom: solid 4px  #109af7;
+    padding: 15px 0px;
+    font-weight: 900;
+    margin-bottom: 30px;
+    font-size: xx-large;
+
+}
+#sec3 p{
+    color: rgb(107, 107, 107);
+    margin-bottom: 100px;
+
+}
+#sec3 .chart {
+    text-align: center;
+    position: relative;
+    width: 8%;
+    padding-top: 3%;
+
+}
+
+#sec3 .chart canvas {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+/* end section 3 */
+
+/* end main */
+
+
+/* tester */
+
