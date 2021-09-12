@@ -1,54 +1,161 @@
-
-// ==============type===================
-var options = {
-    strings: ['hi,<h1>i am omar magdy</h1>', 'i am a web devoloper','I AM VERY HARD WORKER '],
-    typeSpeed: 60
-    ,backSpeed: 60
-    ,loop: true
-  };
-  
-  var typed = new Typed('.type', options);
-// ==============type===================
-// ====================scroll==============
-
-
-
-
-
-
-$(window).on("scroll",function(){
-  var scr= $(window).scrollTop();
-  if(scr>100){
-    $("nav").css("background-color","white");
+// $(window).on('laod',function(){
+// })
+$(document).ready(function () {
     
-    $(".navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-brand").css("color","black");
-    $(".navbar-light .navbar-nav .active > .nav-link:hover").css("color","#109af7");
-    $(".navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-brand").css("margin","0% ");
-    
-  }
+    $('.laoding').hide(1000);
+    // --------------------------------typing------------
 
 
-  if(scr<100){
-    $("nav").css("background-color","#ffffff00");
-      
-
-    $(".navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-brand").css("margin","2% ");
-    $(".navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-brand").css("color","white");
-  }
-});
-// ====================scroll==============
-// ===================skells=================
-$(function () {
-  $('.chart').easyPieChart({
-      //your options goes here
-  });
-});
-
-// ===================skells=================
+    var typed = new Typed('.simpleUsage', {
+        strings: ["HI, I AM <h1 class='d-inline'>OMAR MAGDY</h1>", "I AM A WEB DEVELOPER", 'I HAVE 0 YEARS EXPERIENCE', 'I AM VERY HARD WORKER'],
+        typeSpeed: 70,
+        backSpeed: 30,
+        loop: true
+    });
+    $('nav  a').click(function(e){
+        e.preventDefault();
+        console.log($('#'+$(this).data('scroll')).offset().top)
+        $('html,body').animate({
+            scrollTop : $('#'+ $(this).data('scroll')).offset().top
+        },2000)
+    })
 
 
-// =================particles==============
 
-particlesJS("particles-js", {"particles":{"number":{"value":80,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":0.608657349937933,"random":false,"anim":{"enable":false,"speed":1,"opacity_min":0.1,"sync":false}},"size":{"value":5,"random":true,"anim":{"enable":false,"speed":40,"size_min":0.1,"sync":false}},"line_linked":{"enable":true,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":6,"direction":"none","random":false,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":1200}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":true,"mode":"repulse"},"onclick":{"enable":true,"mode":"push"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":400,"size":40,"duration":2,"opacity":8,"speed":3},"repulse":{"distance":200,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});var count_particles, stats, update; stats = new Stats; stats.setMode(0); stats.domElement.style.position = 'absolute'; stats.domElement.style.left = '0px'; stats.domElement.style.top = '0px'; document.body.appendChild(stats.domElement); count_particles = document.querySelector('.js-count-particles'); update = function() { stats.begin(); stats.end(); if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) { count_particles.innerText = window.pJSDom[0].pJS.particles.array.length; } requestAnimationFrame(update); }; requestAnimationFrame(update);;
-// =================particles==============
 
+    //screen------------
+
+    $(window).on('resize', function () {
+
+        if ($(window).width() < 960) {
+            $('nav').addClass('navbar-shrink');
+        }
+        else {
+            $('nav').removeClass('navbar-shrink');
+        }
+    })
+
+    // scroll---------------
+    $(window).scroll(function () {
+
+
+        if ($(this).scrollTop() >= 190) {
+            $('nav').addClass('navbar-shrink');
+            $('nav').removeClass('py-4');
+
+        }
+        else {
+            $('nav').removeClass('navbar-shrink');
+            $('nav').addClass('py-4');
+
+        }
+        if ($(window).width() < 960) {
+            $('nav').addClass('navbar-shrink');
+        }
+
+
+        // a active
+        // about
+        if (($(this).scrollTop() >= $('#sec2-me').offset().top) && ($(this).scrollTop() <= $('#sec3-skill').offset().top)) {
+            $('.about').addClass('active-color')
+        } else {
+            $('.about').removeClass('active-color')
+        }
+        // slills
+        if (($(this).scrollTop() >= $('#sec3-skill').offset().top) && ($(this).scrollTop() <= $('#sec4-services').offset().top)) {
+            $('.skills').addClass('active-color')
+        } else {
+            $('.skills').removeClass('active-color')
+        }
+        // services
+        if (($(this).scrollTop() >= $('#sec4-services').offset().top) && ($(this).scrollTop() <= $('#sec5-port').offset().top)) {
+            $('.services').addClass('active-color')
+        } else {
+            $('.services').removeClass('active-color')
+        }
+        // portfolio
+        if (($(this).scrollTop() >= $('#sec5-port').offset().top) && ($(this).scrollTop() <= $('#foot-contact').offset().top)) {
+            $('.portfolio').addClass('active-color')
+        } else {
+            $('.portfolio').removeClass('active-color')
+        }
+        // contact
+        if ($(this).scrollTop() >= $('#foot-contact').offset().top) {
+            $('.contact').addClass('active-color')
+        } else {
+            $('.contact').removeClass('active-color')
+        }
+        // button top
+        if ($(this).scrollTop() >= 100) {
+            $('.btn-top').css('bottom', '40px');
+        }
+        else {
+            $('.btn-top').css('bottom', '-85px');
+
+        }
+
+
+
+
+
+    })
+    // click scroll
+    // home
+    $('.home').click(function () {
+        $('body,html').animate({ scrollTop: 0 }, 1000);
+    })
+    // // about
+    // $('.about').click(function () {
+    //     $('body,html').animate({ scrollTop: 710 }, 1000);
+    // })
+    // // skills
+    // $('.skills').click(function () {
+    //     $('body,html').animate({ scrollTop: 1450 }, 1000);
+    // })
+    // // services
+    // $('.services').click(function () {
+    //     $('html,body').animate({ scrollTop: 2800 }, 1000);
+    // })
+    // // portfolio
+    // $('.portfolio').click(function () {
+    //     $('html,body').animate({ scrollTop: 3400 }, 1000);
+    // })
+    // // contact
+    // $('.contact').click(function () {
+    //     $('html,body').animate({ scrollTop: 4570 }, 1000);
+    // })
+
+
+    $(function () {
+
+        $('.example-popover').popover({
+            trigger: 'hover'
+            , content: 'copy to clipboard'
+        })
+    })
+
+
+
+
+    // copy key
+    var clipboard = new ClipboardJS('.btn-copy');
+
+    clipboard.on('success', function (e) {
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+
+        e.clearSelection();
+    });
+
+    clipboard.on('error', function (e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+    // $(function () {
+
+    //     $('.example-popover').popover('toggleEnabled')
+    // })
+    // $('.example-popover').on(' hidden.bs.popover', function () {
+    // })
+})
